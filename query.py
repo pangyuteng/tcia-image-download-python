@@ -18,6 +18,7 @@ def get_response(response):
 if __name__ == '__main__':
     
     manifest_file_path = sys.argv[1]
+    csv_file_path = sys.argv[2]
   
     with open(manifest_file_path,'r') as f:
         content = [x for x in f.read().split('\n') if len(x) > 0]
@@ -165,6 +166,7 @@ if __name__ == '__main__':
                 ct_series_description = ct_list[0].SeriesDescription,
                 ct_img_count = ct_list[0].ImageCount,
                 ct_series_instance_uid = ct_list[0].SeriesInstanceUID,
+                series_instance_uid = ct_list[0].SeriesInstanceUID,
             )
 
             data[PatientID].append(item)
@@ -181,5 +183,5 @@ if __name__ == '__main__':
         else:
             mylist.append(v[0])
 
-    pd.DataFrame(mylist).to_csv('todownload.csv',index=False)
+    pd.DataFrame(mylist).to_csv(csv_file_path,index=False)
     print(count)

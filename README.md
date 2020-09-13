@@ -21,10 +21,10 @@ demo python script to download images from The Cancer Imaging Archive (TCIA)
 * query more info of all series from the manifest with TCIA's REST API. The goal here is to get a final csv to actually download images of your interest. *** you will need to create your own query.py ****
 
     ```
-    python query.py NBIA-manifest-sample.tcia
+    python query.py NBIA-manifest-sample.tcia download.csv
     ```
 
 * finally, download images to your destination folder
 
-    python download.py ${destination_folder}
+    python download.py download.csv ${destination_folder}
 
