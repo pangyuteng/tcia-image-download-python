@@ -11,7 +11,7 @@ demo python script to download images from The Cancer Imaging Archive (TCIA)
 
     ```
 
-    *  change integer in "Show 10 entries" to a max number exceeding the total search count, for example "500", if total search count is 300.
+    *  change integer in "Show 10 entries" to a number exceeding the total search count, for example "500", if total search count is 300.
 
     * select all search results by selecting "shopping cart" icon in table column for each page (ideally there will only be one page, since at a prior step, we updated the count per page to exceed the total search count)
 
