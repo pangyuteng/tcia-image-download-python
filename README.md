@@ -6,10 +6,10 @@ demo python script to download images from The Cancer Imaging Archive (TCIA)
 
     * head to TCIA and enter your desired broad/high-level search term, for example `PET WB` 
 
-```
-https://nbia.cancerimagingarchive.net/nbia-search/?text-search=%22PET%20WB%22
+    ```
+    https://nbia.cancerimagingarchive.net/nbia-search/?text-search=%22PET%20WB%22
 
-```
+    ```
 
     *  change integer in "Show 10 entries" to a max number exceeding the total search count, for example "500", if total search count is 300.
 
@@ -18,14 +18,13 @@ https://nbia.cancerimagingarchive.net/nbia-search/?text-search=%22PET%20WB%22
     * download manifest by clicking the `download`.
 
 
-* query TCIA by using the downloaded manifest and TCIA's rest api. the goal here is to get a final csv to actually download images.
-
-
-    * you will need to create your own query.py 
+* query more info on the series with TCIA REST API by using the downloaded manifest. the goal here is to get a final csv to actually download images. *** you will need to create your own query.py ****
 
     ```
     python query.py NBIA-manifest-sample.tcia
     ```
 
+* finally, download images to your destination folder
 
+    python download.py ${destination_folder}
 
