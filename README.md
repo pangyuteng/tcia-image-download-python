@@ -26,5 +26,6 @@ demo python script to download images from The Cancer Imaging Archive (TCIA)
 * finally, download images to your destination folder
 
     ```
-    python download.py download.csv ${destination_folder}
+    python download.py download.csv ${dest_folder}
+    python unzip_all.py ${dest_folder} ${unzipped_dest_folder}
     ```
