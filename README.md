@@ -41,10 +41,12 @@ docker run --gpus all -it -v /mnt:/mnt -v ${PWD}:/opt -w /opt -p 8888:8888 -p 60
     python download.py download.csv /mnt/hd0/data/ct-wb-zip
     python unzip_all.py /mnt/hd0/data/ct-wb-zip /mnt/hd0/data/ct-wb unzipped-ct-wb.yml
     ```
+    
 * *** if you skipped creating query.py *** download images to your destination folder 
 
     ```
     python download.py ${my_tcia_file} ${dest_folder}
+    python unzip_all.py ${dest_folder} ${unzipped_dest_folder} ${yaml_path}
     ```
 
     ```
