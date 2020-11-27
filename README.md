@@ -2,6 +2,13 @@
 demo python script to download images from The Cancer Imaging Archive (TCIA)
 
 
+## setup environment with docker
+
+```
+docker build -t tf2 .
+docker run --gpus all -it -v /mnt:/mnt -v ${PWD}:/opt -w /opt -p 8888:8888 -p 6006:6006 -u $(id -u):$(id -g)  tf2 bash
+```
+
 * dowload a manifest file from TCIA.
 
     * head to TCIA and enter your desired broad/high-level search term, for example `PET WB` 
@@ -17,15 +24,29 @@ demo python script to download images from The Cancer Imaging Archive (TCIA)
     * download manifest by clicking the `download` button.
 
 
-* query more info of all series from the manifest with TCIA's REST API. The goal here is to get a final csv to actually download images of your interest. *** you will need to create your own `query.py` ****
+* (OPTIONAL) query more info of all series from the manifest with TCIA's REST API. The goal here is to get a final csv to actually download images of your interest. *** you will need to create your own `query.py` ***
 
     ```
-    python query.py NBIA-manifest-sample.tcia download.csv
+    python query.py ${my_tcia_file} download.csv
     ```
 
-* finally, download images to your destination folder
+* *** if you created query.py *** download images to your destination folder 
 
     ```
     python download.py download.csv ${dest_folder}
     python unzip_all.py ${dest_folder} ${unzipped_dest_folder}
     ```
+
+    ```
+    python download.py download.csv /mnt/hd0/data/ct-wb
+
+    ```
+* *** if you skipped creating query.py *** download images to your destination folder 
+
+    ```
+    python download.py ${my_tcia_file} ${dest_folder}
+    ```
+
+    ```
+    mkdir -p /mnt/hd0/data/ct-lower-extremity
+    python download.py NBIA-manifest-sample-ct-lower-extremity.tcia /mnt/hd0/data/ct-lower-extremity
