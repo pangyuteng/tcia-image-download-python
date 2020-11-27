@@ -34,12 +34,12 @@ docker run --gpus all -it -v /mnt:/mnt -v ${PWD}:/opt -w /opt -p 8888:8888 -p 60
 
     ```
     python download.py download.csv ${dest_folder}
-    python unzip_all.py ${dest_folder} ${unzipped_dest_folder}
+    python unzip_all.py ${dest_folder} ${unzipped_dest_folder} ${yaml_path}
     ```
 
     ```
-    python download.py download.csv /mnt/hd0/data/ct-wb
-
+    python download.py download.csv /mnt/hd0/data/ct-wb-zip
+    python unzip_all.py /mnt/hd0/data/ct-wb-zip /mnt/hd0/data/ct-wb unzipped-ct-wb.yml
     ```
 * *** if you skipped creating query.py *** download images to your destination folder 
 
@@ -48,5 +48,7 @@ docker run --gpus all -it -v /mnt:/mnt -v ${PWD}:/opt -w /opt -p 8888:8888 -p 60
     ```
 
     ```
-    mkdir -p /mnt/hd0/data/ct-lower-extremity
-    python download.py NBIA-manifest-sample-ct-lower-extremity.tcia /mnt/hd0/data/ct-lower-extremity
+    mkdir -p /mnt/hd0/data/ct-lower-extremity-zip
+    python download.py NBIA-manifest-sample-ct-lower-extremity.tcia /mnt/hd0/data/ct-lower-extremity-zip
+    python unzip_all.py /mnt/hd0/data/ct-lower-extremity-zip /mnt/hd0/data/ct-lower-extremity unzipped-ct-lower-extremity.yml
+    ```
