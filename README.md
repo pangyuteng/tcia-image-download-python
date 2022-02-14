@@ -5,8 +5,8 @@ demo python script to download images from The Cancer Imaging Archive (TCIA)
 ## setup environment with docker
 
 ```
-docker build -t tf2 .
-docker run --gpus all -it -v /mnt:/mnt -v ${PWD}:/opt -w /opt -p 8888:8888 -p 6006:6006 -u $(id -u):$(id -g)  tf2 bash
+docker build -t tcia .
+docker run -it -v /mnt/hd0:/mnt/hd0 -v ${PWD}:/opt -w /opt  -u $(id -u):$(id -g) tcia bash
 ```
 
 * dowload a manifest file from TCIA.
