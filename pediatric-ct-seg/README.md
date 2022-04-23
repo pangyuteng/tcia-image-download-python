@@ -14,6 +14,8 @@ python ../download.py pediatric-ct-seg-nov-30-2021-manifest.tcia $MYDIR
 python ../unzip_all.py $MYDIR $MYDIR_UNZIP unzipped-ped-ct-seg.yml
 
 
+python ../query.py pediatric-ct-seg-nov-30-2021-manifest.tcia pediatric-ct-seg.csv
+
 
 ```
 
