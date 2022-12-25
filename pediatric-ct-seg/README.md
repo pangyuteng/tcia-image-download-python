@@ -35,6 +35,7 @@ python ../download.py retry-2022-12-25-manifest.tcia $MYDIR
 
 # temporarily modified below to only unzip relevant cases.
 python ../unzip_all.py $MYDIR $MYDIR_UNZIP retry.yml
-
+cd retry
+python ../../query.py ../retry-2022-12-25-manifest.tcia retry-4-cases.csv
 
 ```
