@@ -19,3 +19,18 @@ python ../query.py pediatric-ct-seg-nov-30-2021-manifest.tcia pediatric-ct-seg.c
 
 ```
 
+
+```
+2022-12-25 attempting to download data for either no image/contour not being able to generate
+
+Pediatric-CT-SEG-272B6C5D,Pediatric-CT-SEG-CAB73EEC,Pediatric-CT-SEG-34ECBB32,Pediatric-CT-SEG-14403912
+
+cd /mnt/hd1/github/pediatric-ct-seg
+
+export MYDIR=/mnt/hd2/data/ped-ct-seg-zip
+export MYDIR_UNZIP=/mnt/hd2/data/ped-ct-seg
+
+
+python ../download.py retry-2022-12-25-manifest.tcia $MYDIR
+
+# temporarily modified below to only unzip relevant cases.
