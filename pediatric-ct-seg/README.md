@@ -34,3 +34,7 @@ export MYDIR_UNZIP=/mnt/hd2/data/ped-ct-seg
 python ../download.py retry-2022-12-25-manifest.tcia $MYDIR
 
 # temporarily modified below to only unzip relevant cases.
+python ../unzip_all.py $MYDIR $MYDIR_UNZIP retry.yml
+
+
+```
