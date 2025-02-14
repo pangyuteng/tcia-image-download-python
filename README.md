@@ -1,3 +1,17 @@
+
+
+```
+# *** if you just want to downdload one series and know the series instance uid just use the REST API direction with curl! ***
+
+export MYUID=1.3.6.1.4.1.14519.5.2.1.48822327301563949480198360763011173678
+curl https://services.cancerimagingarchive.net/services/v4/TCIA/query/getImage?SeriesInstanceUID=${MYUID} -o image-1.zip
+
+```
+
+
+--
+
+
 # tcia-image-download-python
 demo python script to download images from The Cancer Imaging Archive (TCIA)
 
